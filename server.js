@@ -18,30 +18,31 @@ app.use(express.static('public'));
 
 var PORT = process.env.PORT || 80;
 
-app.get('/', function (req, res) {
-  console.log("Calling - /api/pdf");
+
+app.get('/', cors(), function (req, res) {
+  console.log("Calling1----->",req);
+  console.log("Calling2------>",res);
   res.send('Hello World!!!!!!')
 });
 
-app.get('/api/pdf', cors(), function (req, res) {  
-    
-  console.log("Calling - /api/pdf");
+
+
+app.get('/api/pdf', cors(), function (req, res) {     
+  console.log("Calling1----->",req);
+  console.log("Calling2------>",res);
   
   var options = {
       format: "A3",
       orientation: "landscape",
       border: "10mm",
-      // phantomPath: "node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs",
-      // phantomPath: "node_modules/phantomjs-prebuilt/bin/phantomjs" 
   };
 
   var document = {
-      type: 'buffer',     // 'file' or 'buffer'
+      type: 'buffer',
       template: html,
       context: {
           Wellsfargo:wellsfargo
       },
-      // path: "./html-pdf-template.pdf"    // it is not required if type is buffer
   };
 
   if (document === null) {
@@ -61,6 +62,32 @@ app.get('/api/pdf', cors(), function (req, res) {
 
 });
 
+
+
+app.get('/api/excel', cors(), function (req, res) {
+
+console.log("calling----------->excel",);
+
+let workbook = new excel.Workbook();
+
+let worksheet = workbook.addWorksheet('Quote Form');
+  res.setHeader(
+      "Content-Type",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  );
+  res.setHeader(
+      "Content-Disposition",
+      "attachment; filename=" + "wellfargo" + ".xlsx"
+  );
+  return workbook.xlsx.write(res).then(function () {
+      res['status'](200).end();
+  });
+
+});
+
 app.listen(PORT, function () {
   console.log('App listening on port ' + PORT);
 });
+
+
+
