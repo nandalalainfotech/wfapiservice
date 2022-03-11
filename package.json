@@ -11,11 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.3",
     "body-parser": "1.18.2",
     "cors": "^2.8.5",
     "dynamic-html-pdf": "^1.0.4",
     "exceljs": "^4.3.0",
+    "express": "^4.17.3",
     "html-pdf": "^3.0.1",
     "markdown-pdf": "^10.0.0",
     "path": "^0.12.7",
