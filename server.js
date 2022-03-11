@@ -120,13 +120,13 @@ app.post('/api/excel', cors(), function (req, res) {
 
     worksheet.getRow(1).height = 40;
     worksheet.getRow(2).height = 30;
-  
+
     worksheet.getRow(10).height = 40;
     worksheet.getRow(11).height = 20;
     worksheet.getRow(12).height = 25;
     worksheet.getRow(13).height = 25;
     worksheet.getRow(14).height = 80;
-   
+
     worksheet.getRow(17).height = 170;
 
     worksheet.columns = [{ key: 'A', width: 8.0 }, { key: 'B', width: 10.0 }, { key: 'C', width: 18.0 },
@@ -408,7 +408,7 @@ app.post('/api/excel', cors(), function (req, res) {
         size: 14,
         name: 'Verdana',
         family: 1
-        
+
     };
     worksheet.getCell('E7:J7').fill = {
         type: 'pattern',
@@ -447,7 +447,7 @@ app.post('/api/excel', cors(), function (req, res) {
         size: 14,
         name: 'Verdana',
         family: 1
-       
+
     };
     worksheet.getCell('E8:J8').alignment = { vertical: 'middle', horizontal: 'left' };
     worksheet.getCell('E8:J8').border = {
@@ -485,7 +485,7 @@ app.post('/api/excel', cors(), function (req, res) {
         size: 14,
         name: 'Verdana',
         family: 1,
-      
+
     };
     worksheet.getCell('E9:J9').fill = {
         type: 'pattern',
@@ -1465,90 +1465,14 @@ app.post('/api/excel', cors(), function (req, res) {
         right: { style: 'thick' }
     };
 
-
-    // worksheet.mergeCells('A18');
-    // worksheet.getCell('A18').value = "1.1";
-    // worksheet.getCell('A18').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1,
-    //     // bold: true
-    // };
-    // worksheet.getCell('A18').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A19').value = "1.2";
-    // worksheet.getCell('A19').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A19').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A20').value = "1.3";
-    // worksheet.getCell('A20').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A20').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A21').value = "1.4";
-    // worksheet.getCell('A21').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A21').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A22').value = "1.5";
-    // worksheet.getCell('A22').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A22').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A23').value = "1.6";
-    // worksheet.getCell('A23').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A23').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A24').value = "1.7";
-    // worksheet.getCell('A24').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A24').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A25').value = "1.8";
-    // worksheet.getCell('A25').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A25').alignment = { vertical: 'middle', horizontal: 'left' };
-
-    // worksheet.getCell('A26').value = "1.9";
-    // worksheet.getCell('A26').font = {
-    //     size: 11,
-    //     name: 'Verdana',
-    //     family: 1
-    // };
-    // worksheet.getCell('A26').alignment = { vertical: 'middle', horizontal: 'left' };
-
-
-
+    
     // -----------------------------------value starting---------------------------
 
     for (let i = 0, j = 1.1; i < wellsfargo.installColumns.length; i++, j = j + 0.1) {
         let temp = i + 18;
 
         const row = worksheet.getRow(temp);
-        row.height=30;
+        row.height = 30;
 
         let cellAAlias = 'A' + temp;
         let cellBAlias = 'B' + temp;
@@ -1817,7 +1741,9 @@ app.post('/api/excel', cors(), function (req, res) {
         worksheet.mergeCells('U' + temp);
         worksheet.getCell('U' + temp).value = wellsfargo.installColumns[i].coloumn16;
         worksheet.getCell('U' + temp).font = {
-            size: 12,
+            size: 13,
+            name: 'Verdana',
+            family: 1,
             bold: true
         };
         worksheet.getCell('U' + temp).alignment = { vertical: 'middle', horizontal: 'left', wrapText: true };
@@ -1839,7 +1765,8 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.getCell('L' + installColumnslength).font = {
         size: 13,
         name: 'Verdana',
-        family: 1
+        family: 1,
+        bold: true
     };
     worksheet.getCell('L' + installColumnslength).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     worksheet.getCell('L' + installColumnslength).border = {
@@ -1854,7 +1781,8 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.getCell('O' + installColumnslength).font = {
         size: 13,
         name: 'Verdana',
-        family: 1
+        family: 1,
+        bold: true
     };
     worksheet.getCell('O' + installColumnslength).alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
     worksheet.getCell('O' + installColumnslength).border = {
@@ -1868,7 +1796,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('P' + installColumnslength);
     worksheet.getCell('P' + installColumnslength).value = wellsfargo.totalHoursPerPerson;
     worksheet.getCell('P' + installColumnslength).font = {
-        size: 12,
+        size: 13,
+        name: 'Verdana',
+        family: 1,
         bold: true
     };
     worksheet.getCell('P' + installColumnslength).alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
@@ -1885,7 +1815,7 @@ app.post('/api/excel', cors(), function (req, res) {
         size: 13,
         name: 'Verdana',
         family: 1,
-        bold: true
+        // bold: true
     };
     worksheet.getCell('Q' + installColumnslength).fill = {
         type: 'pattern',
@@ -1907,7 +1837,7 @@ app.post('/api/excel', cors(), function (req, res) {
         size: 13,
         name: 'Verdana',
         family: 1,
-        bold: true
+        // bold: true
     };
     worksheet.getCell('R' + installColumnslength).fill = {
         type: 'pattern',
@@ -2297,7 +2227,7 @@ app.post('/api/excel', cors(), function (req, res) {
         let temp = i;
 
         const row = worksheet.getRow(temp);
-        row.height=30;
+        // row.height = 30;
 
         let cellAAlias = 'A' + temp;
         let cellBAlias = 'B' + temp;
@@ -2565,7 +2495,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('L' + demoTableLength);
     worksheet.getCell('L' + demoTableLength).value = wellsfargo.totalDemo;
     worksheet.getCell('L' + demoTableLength).font = {
-        size: 12,
+        size: 13,
+            name: 'Verdana',
+            family: 1,
         bold: true
     };
     worksheet.getCell('L' + demoTableLength).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
@@ -2579,7 +2511,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('O' + demoTableLength);
     worksheet.getCell('O' + demoTableLength).value = wellsfargo.totalDemoPeople;
     worksheet.getCell('O' + demoTableLength).font = {
-        size: 12,
+        size: 13,
+        name: 'Verdana',
+        family: 1,
         bold: true
     };
     worksheet.getCell('O' + demoTableLength).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
@@ -2594,7 +2528,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('P' + demoTableLength);
     worksheet.getCell('P' + demoTableLength).value = wellsfargo.totalDemoHoursPerPerson;
     worksheet.getCell('P' + demoTableLength).font = {
-        size: 12,
+        size: 13,
+            name: 'Verdana',
+            family: 1,
         bold: true
     };
     worksheet.getCell('P' + demoTableLength).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
@@ -2650,7 +2586,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('S' + demoTableLength);
     worksheet.getCell('S' + demoTableLength).value = wellsfargo.totalDemoLabor;
     worksheet.getCell('S' + demoTableLength).font = {
-        size: 12,
+        size: 13,
+        name: 'Verdana',
+        family: 1,
         bold: true
     };
     worksheet.getCell('S' + demoTableLength).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
@@ -2667,6 +2605,12 @@ app.post('/api/excel', cors(), function (req, res) {
         size: 13,
         name: 'Verdana',
         family: 1
+    };
+    worksheet.getCell('T' + demoTableLength).fill = {
+        type: 'pattern',
+        pattern: 'solid',
+        fgColor: { argb: '808080' },
+        bgColor: { argb: '808080' }
     };
     worksheet.getCell('T' + demoTableLength).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     worksheet.getCell('T' + demoTableLength).border = {
@@ -2725,7 +2669,7 @@ app.post('/api/excel', cors(), function (req, res) {
         right: { style: 'thick' }
     };
 
-
+    worksheet.getRow(demoTableLength + 3).height = 120;
     worksheet.mergeCells('A' + (demoTableLength + 3));
     worksheet.getCell('A' + (demoTableLength + 3)).value = "30.1";
     worksheet.getCell('A' + (demoTableLength + 3)).alignment = { vertical: 'bottom', horizontal: 'left', wrapText: true };
@@ -2734,6 +2678,7 @@ app.post('/api/excel', cors(), function (req, res) {
         name: 'Verdana',
         family: 1
     };
+
 
     worksheet.mergeCells('B' + (demoTableLength + 3) + ':' + 'M' + (demoTableLength + 3));
     worksheet.getCell('B' + (demoTableLength + 3) + ':' + 'M' + (demoTableLength + 3)).value = wellsfargo.clarificationDescription;
@@ -2833,7 +2778,14 @@ app.post('/api/excel', cors(), function (req, res) {
         right: { style: 'thick' }
     };
 
-
+    worksheet.mergeCells('A' + (demoTableLength + 6));
+    worksheet.getCell('A' + (demoTableLength + 6)).value = "40";
+    worksheet.getCell('A' + (demoTableLength + 6)).alignment = { vertical: 'bottom', horizontal: 'left', wrapText: true };
+    worksheet.getCell('A' + (demoTableLength + 6)).font = {
+        size: 11,
+        name: 'Verdana',
+        family: 1,
+    };
     worksheet.mergeCells('L' + (demoTableLength + 6) + ':' + 'M' + (demoTableLength + 6));
     worksheet.getCell('L' + (demoTableLength + 6) + ':' + 'M' + (demoTableLength + 6)).value = wellsfargo.taxRate;
     worksheet.getCell('L' + (demoTableLength + 6) + ':' + 'M' + (demoTableLength + 6)).font = {
@@ -2889,8 +2841,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('S' + (demoTableLength + 6));
     worksheet.getCell('S' + (demoTableLength + 6)).value = wellsfargo.productTax;
     worksheet.getCell('S' + (demoTableLength + 6)).font = {
-        size: 14,
-        // bold: true
+        size: 13,
+        name: 'Verdana',
+        family: 1,
     };
     worksheet.getCell('S' + (demoTableLength + 6)).fill = {
         type: 'pattern',
@@ -2909,8 +2862,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('T' + (demoTableLength + 6) + ':' + 'U' + (demoTableLength + 6));
     worksheet.getCell('T' + (demoTableLength + 6) + ':' + 'U' + (demoTableLength + 6)).value = wellsfargo.productTotal;
     worksheet.getCell('T' + (demoTableLength + 6) + ':' + 'U' + (demoTableLength + 6)).font = {
-        size: 14,
-        // bold: true
+        size: 13,
+        name: 'Verdana',
+        family: 1,
     };
     worksheet.getCell('T' + (demoTableLength + 6) + ':' + 'U' + (demoTableLength + 6)).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     worksheet.getCell('T' + (demoTableLength + 6) + ':' + 'U' + (demoTableLength + 6)).border = {
@@ -2948,8 +2902,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('R' + (demoTableLength + 7));
     worksheet.getCell('R' + (demoTableLength + 7)).value = wellsfargo.laborPreTax;
     worksheet.getCell('R' + (demoTableLength + 7)).font = {
-        size: 14,
-        // bold: true
+        size: 13,
+        name: 'Verdana',
+        family: 1,
     };
     worksheet.getCell('R' + (demoTableLength + 7)).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     worksheet.getCell('R' + (demoTableLength + 7)).border = {
@@ -2962,8 +2917,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('S' + (demoTableLength + 7));
     worksheet.getCell('S' + (demoTableLength + 7)).value = wellsfargo.laborTax;
     worksheet.getCell('S' + (demoTableLength + 7)).font = {
-        size: 14,
-        // bold: true
+        size: 13,
+        name: 'Verdana',
+        family: 1,
     };
     worksheet.getCell('S' + (demoTableLength + 7)).fill = {
         type: 'pattern',
@@ -2982,8 +2938,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.mergeCells('T' + (demoTableLength + 7) + ':' + 'U' + (demoTableLength + 7));
     worksheet.getCell('T' + (demoTableLength + 7) + ':' + 'U' + (demoTableLength + 7)).value = wellsfargo.laborTotal;
     worksheet.getCell('T' + (demoTableLength + 7) + ':' + 'U' + (demoTableLength + 7)).font = {
-        size: 14,
-        // bold: true
+        size: 13,
+        name: 'Verdana',
+        family: 1,
     };
     worksheet.getCell('T' + (demoTableLength + 7) + ':' + 'U' + (demoTableLength + 7)).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
     worksheet.getCell('T' + (demoTableLength + 7) + ':' + 'U' + (demoTableLength + 7)).border = {
@@ -2999,8 +2956,9 @@ app.post('/api/excel', cors(), function (req, res) {
     worksheet.getCell('A' + (demoTableLength + 8)).value = "40";
     worksheet.getCell('A' + (demoTableLength + 8)).alignment = { vertical: 'bottom', horizontal: 'left', wrapText: true };
     worksheet.getCell('A' + (demoTableLength + 8)).font = {
-        size: 12,
-        bold: true
+        size: 11,
+        name: 'Verdana',
+        family: 1,
     };
 
     worksheet.mergeCells('O' + (demoTableLength + 8) + ':' + 'Q' + (demoTableLength + 8));
@@ -3589,7 +3547,7 @@ app.post('/api/excel', cors(), function (req, res) {
 
     worksheet.mergeCells('A' + (demoTableLength + 16));
     worksheet.getCell('A' + (demoTableLength + 16)).value = "41";
-    worksheet.getCell('A' + (demoTableLength + 16)).alignment = { vertical: 'middle', horizontal: 'center', wrapText: true };
+    worksheet.getCell('A' + (demoTableLength + 16)).alignment = { vertical: 'bottom', horizontal: 'left', wrapText: true };
     worksheet.getCell('A' + (demoTableLength + 16)).font = {
         size: 11,
         name: 'Verdana',
