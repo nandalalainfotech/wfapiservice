@@ -4,19 +4,19 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Ajax Example</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <style>
         .head {
             text-align: center;
+            font-family: verdana;
         }
 
         .textarea {
-            margin-left: 20%;
+            margin-left: 30%;
         }
 
         #form1 {
-            margin-left: 60%;
+            margin-left: 56%;
         }
 
         .button {
@@ -29,15 +29,53 @@
             font-family: verdana;
             font-size: large;
         }
+
+        .button1 {
+            width: 120px;
+            background-color: #808080;
+            color: white;
+            padding: 6px 0px 10px 0px;
+            border-radius: 5px;
+            border: none !important;
+            font-family: verdana;
+            font-size: large;
+        }
+
+        #form2 {
+
+            margin-left: 30%;
+        }
+
+        .input {
+            width: 27%;
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .label {
+            font-family: verdana; 
+            font-weight: bold;
+        }
     </style>
 
 </head>
 
 
 <body>
-    <h1 id="info1" class="head">Wellfargo PDF & ExcelDownload </h1>
+    <div class="row">
+        <h1 id="info1" class="head">Wellfargo PDF & ExcelDownload </h1>
+    </div>
 
-    <textarea rows="10" cols="100" class="textarea"></textarea>
+    <form id="form2">
+        <label class="label">URL:</label>
+        <input type="text" class="input" id="url">
+        <button class="button1" id="clear">Clear URL</button>
+        <button class="button1"  id="clearAll">Clear JSON</button>
+    </form>
+    <br>
+    <div class="row">
+        <textarea rows="15" cols="75" class="textarea" id="jsonData"></textarea>
+    </div>
 
     <form id="form1">
         <button name="submit" id="pdf" value="PDF" class="button">PDF</button>
@@ -45,6 +83,15 @@
     </form>
 
     <script>
+        $('#clear').click(function (event) {
+            event.preventDefault();
+            $('#url').val("");
+        });
+
+        $('#clearAll').click(function (event) {
+            event.preventDefault();
+            $('#jsonData').val("");
+        });
 
         $('#pdf').click(function (event) {
             console.log("Testing-PDF");

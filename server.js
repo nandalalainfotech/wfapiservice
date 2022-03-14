@@ -23,8 +23,7 @@ var PORT = process.env.PORT || 80;
 
 
 app.get('/', cors(), function (req, res) {
-    console.log("Hello World!!!");
-    res.send('Hello World!!!')
+    res.sendFile(path.join(__dirname, '/mock.html'));
 });
 
 app.post('/api/test/pdf', cors(), function (req, res) {
