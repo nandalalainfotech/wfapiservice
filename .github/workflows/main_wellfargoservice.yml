@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'wellfargoservice'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F1DBD5EF1CE14971A439EE45A3E86073 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8D671B92AD4E4818903CC8DB21C84396 }}
           package: .
