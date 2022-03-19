@@ -20,6 +20,7 @@
     "markdown-pdf": "^10.0.0",
     "path": "^0.12.7",
     "phantom": "^6.3.0",
+    "phantomjs": "^2.1.7",
     "phantomjs-prebuilt": "^2.1.16",
     "reflect-metadata": "0.1.13",
     "serve-favicon": "^2.5.0"

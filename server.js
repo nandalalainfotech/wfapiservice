@@ -26,6 +26,8 @@ app.get('/', cors(), function (req, res) {
     res.sendFile(path.join(__dirname, '/mock.html'));
 });
 
+
+
 app.post('/api/test/pdf', cors(), function (req, res) {
     console.log("Calling /api/test/pdf");
     res.send('Hello World!!!' + res.body.data)
@@ -43,8 +45,9 @@ function isEmpty(obj) {
     }
     return true;
 }
-
-app.post('/api/pdf', cors(), function (req, res) {
+var phantomjs = require('phantomjs');
+app.post('/api/pdf', cors(),async function (req, res) {
+    console.log("/api/pdf calling");
     var chunks = [];
     res.on("data", function (chunk) {
         chunks.push(chunk);
@@ -61,11 +64,12 @@ app.post('/api/pdf', cors(), function (req, res) {
         return;
     }
     let wellsfargo = req.body;
-    // console.log("calling pdf req----->",wellsfargo);
+    console.log("phantomjs.path----->",phantomjs.path);
     var options = {
         format: "A3",
         orientation: "landscape",
         border: "10mm",
+        phantomPath: "/usr/local/bin/phantomjs",
     };
 
     var document = {
@@ -75,12 +79,13 @@ app.post('/api/pdf', cors(), function (req, res) {
             Wellsfargo: wellsfargo
         },
     };
-
+    console.log("/api/pdf calling-2");
     if (document === null) {
         return null;
 
     } else {
-        pdf.create(document, options).then(response => {
+        console.log("/api/pdf calling-3");
+        await pdf.create(document, options).then(response => {
             res.writeHead(200, {
                 "Content-Disposition": "attachment;filename=" + "wellsFargo.pdf",
                 'Content-Type': 'application/pdf'
@@ -88,6 +93,7 @@ app.post('/api/pdf', cors(), function (req, res) {
             return res.end(response);
         })
         .catch(error => {
+            console.log("/api/pdf calling-4");
             console.error(error);
             return res.status(200).send(error.toString());
         });
@@ -98,6 +104,7 @@ app.post('/api/pdf', cors(), function (req, res) {
 
 
 app.post('/api/excel', cors(), function (req, res) {
+    console.log("/api/excel calling");
     var chunks = [];
     res.on("data", function (chunk) {
         chunks.push(chunk);
