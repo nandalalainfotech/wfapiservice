@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Ajax Example</title>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    
     <style>
         .head {
             text-align: center;
@@ -53,7 +54,7 @@
         }
 
         .label {
-            font-family: verdana; 
+            font-family: verdana;
             font-weight: bold;
         }
     </style>
@@ -63,14 +64,14 @@
 
 <body>
     <div class="row">
-        <h1 id="info1" class="head">Wellfargo PDF & ExcelDownload </h1>
+        <h1 id="info1" class="head">Wellsfargo PDF & ExcelDownload </h1>
     </div>
 
     <form id="form2">
         <label class="label">URL:</label>
         <input type="text" class="input" id="url">
         <button class="button1" id="clear">Clear URL</button>
-        <button class="button1"  id="clearAll">Clear JSON</button>
+        <button class="button1" id="clearAll">Clear JSON</button>
     </form>
     <br>
     <div class="row">
@@ -102,9 +103,11 @@
                     responseType: 'blob'
                 },
                 type: 'POST',
-                url: 'https://wfapicallservice.azurewebsites.net/api/pdf',
+                url: 'https://wellsfargoservice.azurewebsites.net/api/pdf',
+                // url: 'http://localhost/api/pdf',
                 data: excelData,
                 success: function (result) {
+                    console.log("testing!!!", result);
                     let blob = new Blob([result], { type: "application/octetstream" });
                     let a = document.createElement('a');
                     a.href = window.URL.createObjectURL(blob);
@@ -126,9 +129,10 @@
                     responseType: 'blob' // to avoid binary data being mangled on charset conversion
                 },
                 type: 'POST',
-                url: 'https://wfapicallservice.azurewebsites.net/api/excel',
+                url: 'https://wellsfargoservice.azurewebsites.net/api/excel',
                 data: excelData,
                 success: function (result) {
+                    console.log("testing!!!22", result);
                     let blob = new Blob([result], { type: "application/octetstream" });
                     let a = document.createElement('a');
                     a.href = window.URL.createObjectURL(blob);

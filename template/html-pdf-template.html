@@ -9,7 +9,7 @@
             border-collapse: collapse;
             /* text-align: center; */
         }
-        
+
         th {
             border: 1px solid black;
             border-collapse: collapse;
@@ -18,7 +18,7 @@
             font-size: 12px;
             font-weight: 600;
         }
-        
+
         td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -26,9 +26,9 @@
             font-family: Calibri;
             font-size: 12px;
         }
-        
+
         .rotate {
-            -webkit-transform: rotate(-90deg);
+            /* -webkit-transform: rotate(-90deg); */
             background-color: #D9D9D9;
             border: none;
             width: 100px;
@@ -36,34 +36,34 @@
             /* margin-right: 30px; */
             /* padding-left: 30px; */
         }
-        
+
         .wells {
             font-size: 28px;
             font-weight: lighter;
             border: none !important;
         }
-        
+
         .xx {
             background-color: #F2F2F2;
             border: 1px solid black !important;
         }
-        
+
         .project {
             background-color: #808080;
             color: white;
             font-size: 12px;
         }
-        
+
         .work {
             text-align: right;
         }
-        
+
         .lynx {
             background-color: #F2F2F2;
             text-align: left;
             font-size: 14px;
         }
-        
+
         .scope {
             text-align: left;
             height: 30px;
@@ -71,14 +71,14 @@
             color: white;
             font-size: 16px;
         }
-        
+
         .provide {
             background-color: #C5D9F1;
             text-align: left;
             font-size: 14px;
             padding-bottom: 50px;
         }
-        
+
         .install {
             text-align: center;
             background-color: #808080;
@@ -86,7 +86,7 @@
             height: 20px;
             font-size: 16px;
         }
-        
+
         .demo {
             background-color: #808080;
             height: 20px;
@@ -94,29 +94,29 @@
             color: white;
             font-size: 14px;
         }
-        
+
         .assume {
             text-align: left;
             font-size: 16px;
             padding-bottom: 60px;
         }
-        
+
         .dollar {
             background-color: #F2DCDB;
         }
-        
+
         .total {
             text-align: right;
         }
-        
+
         .even {
             background-color: #F2F2F2;
         }
-        
+
         .text {
             color: #FF0000;
         }
-        
+
         .bord {
             border: 1px solid black;
         }
@@ -131,7 +131,8 @@
         <tr>
 
             <th colspan="21" class="wells">
-                <img src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Wells_Fargo_Bank.svg' style="width: 50px;height: 50px;float: left;"> {{Wellsfargo.mainTitle}}
+                <img src='https://upload.wikimedia.org/wikipedia/commons/b/b3/Wells_Fargo_Bank.svg'
+                    style="width: 50px;height: 50px;float: left;"> {{Wellsfargo.mainTitle}}
             </th>
 
         </tr>
@@ -155,47 +156,47 @@
 
         <tr>
             <th colspan="4" class="work">Project # or Work Order #</th>
-            <th colspan="6" class="lynx">{{Wellsfargo.projectOrWorkOrder}}</th>
+            <td colspan="6" class="lynx">{{Wellsfargo.projectOrWorkOrder}}</td>
             <th colspan="2" class="work">Company Name:</th>
             <td colspan="4" class="lynx">{{Wellsfargo.companyName}}</td>
             <th colspan="2" class="work">WF Vendor Number:</th>
-            <th colspan="2" class="lynx">{{Wellsfargo.wfVendOrNumber}}</th>
+            <td colspan="2" class="lynx">{{Wellsfargo.wfVendOrNumber}}</td>
         </tr>
         <tr>
             <th colspan="4" class="work">WF Project/ Property Manager</th>
-            <th colspan="6" class="lynx">{{Wellsfargo.wfProjectOrPropertyManager}}</th>
+            <td colspan="6" class="lynx">{{Wellsfargo.wfProjectOrPropertyManager}}</td>
             <th colspan="2" class="work">Remit To Address:</th>
             <td colspan="4" class="lynx">{{Wellsfargo.remitToAddress}}</td>
             <th colspan="2" class="work">Proposal Number:</th>
-            <td colspan="2" class="lynx" style="text-align: center;">{{Wellsfargo.proposalNumber}}</td>
+            <td colspan="2" class="lynx">{{Wellsfargo.proposalNumber}}</td>
         </tr>
         <tr>
             <th colspan="4" class="work">BE Number:</th>
-            <th colspan="6" class="lynx">{{Wellsfargo.beNumber}}</th>
+            <td colspan="6" class="lynx">{{Wellsfargo.beNumber}}</td>
             <th colspan="2" class="work">City, State, Zip :</th>
             <td colspan="4" class="lynx">{{Wellsfargo.cityStateZip}}</td>
             <th colspan="2" class="work">WF Contract Number:</th>
-            <th colspan="2" class="lynx">{{Wellsfargo.wfContractNumber}}</th>
+            <td colspan="2" class="lynx">{{Wellsfargo.wfContractNumber}}</td>
         </tr>
         <tr>
             <th colspan="4" class="work">Building / Project Name:</th>
-            <th colspan="6" class="lynx">{{Wellsfargo.buildingOrProjectName}}</th>
+            <td colspan="6" class="lynx">{{Wellsfargo.buildingOrProjectName}}</td>
             <th colspan="2" class="work">Contact Name:</th>
-            <th colspan="4" class="lynx">{{Wellsfargo.contactName}}</th>
+            <td colspan="4" class="lynx">{{Wellsfargo.contactName}}</td>
             <th colspan="2" class="work">Change Order #:</th>
-            <th colspan="2" class="lynx">{{Wellsfargo.changeOrder}}</th>
+            <td colspan="2" class="lynx">{{Wellsfargo.changeOrder}}</td>
         </tr>
         <tr>
             <th colspan="4" class="work">BE Service or Delivery Address</th>
-            <th colspan="6" class="lynx">{{Wellsfargo.beServiceOrDeliveryAddress}}</th>
+            <td colspan="6" class="lynx">{{Wellsfargo.beServiceOrDeliveryAddress}}</td>
             <th colspan="2" class="work">Phone:</th>
             <td colspan="4" class="lynx">{{Wellsfargo.phone}}</td>
             <th colspan="2" class="work">Change Order Previous PO#:</th>
-            <th colspan="2" class="lynx">{{Wellsfargo.changeOrderPreviousPO}}</th>
+            <td colspan="2" class="lynx">{{Wellsfargo.changeOrderPreviousPO}}</td>
         </tr>
         <tr>
             <th colspan="4" class="work">Project Area (sq.ft.):</th>
-            <th colspan="6" class="lynx">{{Wellsfargo.projectArea}}</th>
+            <td colspan="6" class="lynx">{{Wellsfargo.projectArea}}</td>
             <th colspan="2" class="work">Cell:</th>
             <td colspan="4" class="lynx">{{Wellsfargo.cell}}</td>
             <th colspan="4" class="lynx"></th>
@@ -206,7 +207,7 @@
             <th colspan="2">Estimated Complete Date:</th>
             <td colspan="2" class="lynx">{{Wellsfargo.estimatedCompleteDate}}</td>
             <th colspan="2" class="work">Email:</th>
-            <th colspan="8" class="lynx">{{Wellsfargo.email}}</th>
+            <td colspan="8" class="lynx">{{Wellsfargo.email}}</td>
         </tr>
 
 

@@ -86,8 +86,10 @@ app.post('/api/pdf', cors(), function (req, res) {
                 'Content-Type': 'application/pdf'
             });
             return res.end(response);
-        }).catch(error => {
-            console.error(error)
+        })
+        .catch(error => {
+            console.error(error);
+            return res.status(200).send(error.toString());
         });
     };
 
