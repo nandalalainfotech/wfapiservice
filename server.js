@@ -45,7 +45,7 @@ function isEmpty(obj) {
     }
     return true;
 }
-var phantomjs = require('phantomjs');
+// var phantomjs = require('phantomjs');
 app.post('/api/pdf', cors(),async function (req, res) {
     console.log("/api/pdf calling");
     var chunks = [];
@@ -64,12 +64,12 @@ app.post('/api/pdf', cors(),async function (req, res) {
         return;
     }
     let wellsfargo = req.body;
-    console.log("phantomjs.path----->",phantomjs.path);
+    // console.log("phantomjs.path----->",phantomjs.path);
     var options = {
         format: "A3",
         orientation: "landscape",
         border: "10mm",
-        phantomPath: "/usr/local/bin/phantomjs",
+        //phantomPath: "/usr/local/bin/phantomjs",
     };
 
     var document = {
