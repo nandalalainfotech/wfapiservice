@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'wfapiservice'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7A666AB869A74F59A080EAAF6AFA2C0F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_14857B3FE2E3459CA6292C39E4F28426 }}
           package: .
