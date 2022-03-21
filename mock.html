@@ -103,7 +103,7 @@
                     responseType: 'blob'
                 },
                 type: 'POST',
-                url: 'https://wfapiservice.azurewebsites.net/api/pdf',
+                url: 'https://wfaapiservice.azurewebsites.net/api/pdf',
                 // url: 'http://localhost/api/pdf',
                 data: excelData,
                 success: function (result) {
@@ -111,7 +111,7 @@
                     let blob = new Blob([result], { type: "application/octetstream" });
                     let a = document.createElement('a');
                     a.href = window.URL.createObjectURL(blob);
-                    a.download = "wellforgo.pdf";
+                    a.download = "wellsfargo.pdf";
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
@@ -129,14 +129,14 @@
                     responseType: 'blob' // to avoid binary data being mangled on charset conversion
                 },
                 type: 'POST',
-                url: 'https://wfapiservice.azurewebsites.net/api/excel',
+                url: 'https://wfaapiservice.azurewebsites.net/api/excel',
                 data: excelData,
                 success: function (result) {
                     console.log("testing!!!22", result);
                     let blob = new Blob([result], { type: "application/octetstream" });
                     let a = document.createElement('a');
                     a.href = window.URL.createObjectURL(blob);
-                    a.download = "wellforgo.xlsx";
+                    a.download = "wellsfargo.xlsx";
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);

@@ -65,18 +65,24 @@ app.post('/api/pdf', cors(),async function (req, res) {
     }
     let wellsfargo = req.body;
     // console.log("phantomjs.path----->",phantomjs.path);
+    var basePath = 'file:///' + __dirname;
+    var base64data = Buffer.from(__dirname+'/images/wellsfargo.png', 'binary').toString('base64');
+    const pictureHtml = `<img src="data:image/png;base64","${base64data}">`;
     var options = {
         format: "A3",
         orientation: "landscape",
         border: "10mm",
-        //phantomPath: "/usr/local/bin/phantomjs",
+        base: basePath,
+        contents: "<img src='./../images/wellsfargo.png'/>",
+        phantomPath: "./node_modules/phantomjs-prebuilt/bin/phantomjs",
     };
 
     var document = {
         type: 'buffer',
         template: html,
         context: {
-            Wellsfargo: wellsfargo
+            Wellsfargo: wellsfargo,
+            PictureHtml: pictureHtml
         },
     };
     console.log("/api/pdf calling-2");

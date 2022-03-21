@@ -16,6 +16,7 @@
     "dynamic-html-pdf": "^1.0.4",
     "exceljs": "^4.3.0",
     "express": "^4.17.3",
+    "ffmpeg": "0.0.4",
     "fontconfig": "^0.3.1",
     "html-pdf": "^3.0.1",
     "markdown-pdf": "^10.0.0",
