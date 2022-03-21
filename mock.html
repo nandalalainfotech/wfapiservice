@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Ajax Example</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Verdana">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     
     <style>
@@ -103,7 +104,7 @@
                     responseType: 'blob'
                 },
                 type: 'POST',
-                url: 'https://wfaapiservice.azurewebsites.net/api/pdf',
+                url: 'https://wellsfargoservice.azurewebsites.net/api/pdf',
                 // url: 'http://localhost/api/pdf',
                 data: excelData,
                 success: function (result) {
@@ -129,7 +130,7 @@
                     responseType: 'blob' // to avoid binary data being mangled on charset conversion
                 },
                 type: 'POST',
-                url: 'https://wfaapiservice.azurewebsites.net/api/excel',
+                url: 'https://wellsfargoservice.azurewebsites.net/excel',
                 data: excelData,
                 success: function (result) {
                     console.log("testing!!!22", result);
