@@ -104,7 +104,7 @@
                     responseType: 'blob'
                 },
                 type: 'POST',
-                url: 'https://wellsfargoservice.azurewebsites.net/api/pdf',
+                url: 'https://wfaapiservice.azurewebsites.net/api/pdf',
                 // url: 'http://localhost/api/pdf',
                 data: excelData,
                 success: function (result) {
@@ -130,7 +130,7 @@
                     responseType: 'blob' // to avoid binary data being mangled on charset conversion
                 },
                 type: 'POST',
-                url: 'https://wellsfargoservice.azurewebsites.net/excel',
+                url: 'https://wfaapiservice.azurewebsites.net/api/excel',
                 data: excelData,
                 success: function (result) {
                     console.log("testing!!!22", result);
