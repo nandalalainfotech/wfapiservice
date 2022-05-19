@@ -104,8 +104,8 @@
                     responseType: 'blob'
                 },
                 type: 'POST',
-                url: 'https://wfaapiservice.azurewebsites.net/api/pdf',
-                // url: 'http://localhost/api/pdf',
+                // url: 'https://wfaapiservice.azurewebsites.net/api/pdf',
+                url: 'http://localhost/api/pdf',
                 data: excelData,
                 success: function (result) {
                     console.log("testing!!!", result);
@@ -130,7 +130,8 @@
                     responseType: 'blob' // to avoid binary data being mangled on charset conversion
                 },
                 type: 'POST',
-                url: 'https://wfaapiservice.azurewebsites.net/api/excel',
+                // url: 'https://wfaapiservice.azurewebsites.net/api/excel',
+                url: 'http://localhost/api/excel',
                 data: excelData,
                 success: function (result) {
                     console.log("testing!!!22", result);

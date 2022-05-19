@@ -74,7 +74,7 @@ app.post('/api/pdf', cors(),async function (req, res) {
         border: "10mm",
         base: basePath,
         contents: "<img src='./../images/wellsfargo.png'/>",
-        phantomPath: "./node_modules/phantomjs-prebuilt/bin/phantomjs",
+        // phantomPath: "./node_modules/phantomjs-prebuilt/bin/phantomjs",
     };
 
     var document = {
